@@ -1,0 +1,92 @@
+.ProjectPanel {
+  position: relative;
+  background: rgba(211, 211, 211, 0.404);
+  width: 90%;
+  min-height: 90%;
+  margin:auto;
+  padding: 20px;
+  
+
+  display: grid;
+  grid-template-rows: [title] 15% [tools-used] 15% [description-row] 30% [site-link] 10% [view-code] 10%;
+  grid-template-columns: [description-col] 30% [image] 70%;
+  grid-gap: 10px 10px;
+  overflow: auto;
+
+  border: 1px solid pink;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.Project-Title {
+font-size: 25px;
+    hyphens: auto;
+  justify-content: center;
+  margin-top: 0;
+  grid-area: title/ description-col / span 1 / span 1;
+}
+
+.ProjectPanel > img {
+  width: 100%;
+  height: 100%;
+  grid-area: title/ image / site-link / span 1;
+  opacity: 0.8;
+}
+
+.Tools-Used {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  font-weight: 700;
+
+  font-size: 15px;
+  grid-area: tools-used / description-col / description-row / span 1;
+}
+
+.ProjectPanel-Description {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  color: black;
+
+  font-size: 14px;
+  text-align: left;
+  hyphens: auto;
+  font-weight: 600;
+
+  grid-area: description-row / description-col / -1 / span 1;
+}
+
+.Site-Link,
+.Github-Link {
+  display: block;
+  float: left;
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 40%;
+  grid-area: site-link / image / span 1 / span 1;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.349);
+  font-weight: bold;
+}
+
+.View-Code {
+  grid-area: view-code / image / span 1 / span 1;
+  background: rgba(255, 255, 255, 0.336);
+  font-weight: bold;
+}
+
+.Site-Link:hover,
+.Github-Link:hover,
+.View-Code:hover {
+    background:lightcoral;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .ProjectPanel {
+    width: 80%;
+    margin: 5%;
+    display:block;
+  }
+}

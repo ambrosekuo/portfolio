@@ -1,16 +1,27 @@
 .App {
   text-align: center;
-}
+  /* background: rgba(224, 85, 85, 0.253); */
+  background: lightgrey;
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  position: absolute;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  display: flex;
+  height: max-content;
+  overflow: auto;
+  
+  background: white;
+}
+
+.App-header-title {
+  /* background-color: #395385; */
+  background-color: rgb(77, 76, 76);
+
+  justify-content: center;
+  height: 100vh;
+  width: 40%;
+  float: left;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,15 +30,67 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header-title > h1 {
+  text-shadow: 4px 4px rgb(101, 161, 155);
+  text-transform: uppercase;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Button-Container > ul {
+  width: 100%;
+  margin-top: 20px;
+  list-style: none;
+  background: grey;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}
+
+.Button-Container > ul > li {
+  width: 120px;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 5px 20px 5px 0;
+  padding: 5px;
+  float: left;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.938);
+  color: black;
+}
+.Button-Container > ul > li:last-child {
+  margin: 5px 0 5px 0;
+}
+
+.Button-Container > ul > li:hover {
+  background: transparent;
+  color: white;
+}
+
+.Favourite-Projects,
+.Other-Projects {
+  margin-top: 5%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 5%;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.301);
+  border: 1px solid lightgrey;
+  box-shadow: 0 2px 5px 0 rgba(223, 151, 151, 0.26);
+}
+
+@media (max-width: 1000px) {
+  .App-header {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  .App-header-title {
+    height: 50vh;
+    width: 100%;
+  }
+
+  .Button-Container > ul  {
+    margin: 20px auto 0 auto;
+    width: 50%;
+  }
+  .Button-Container > ul  > li {
+    margin-bottom: 20px;
   }
 }

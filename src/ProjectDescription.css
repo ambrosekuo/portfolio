@@ -1,0 +1,36 @@
+.Project-Description {
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+
+
+  background: rgba(255, 255, 224, 0.712);
+}
+
+.Project-Description-Header,
+.Toggle-Current-Ideas {
+  background: lightyellow;
+  margin-top: 0px;
+  border-bottom: 1px solid black;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.Project-Description > ul {
+  text-align: left;
+}
+
+.Project-Description > ul > li {
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    
+  .Project-Description {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
