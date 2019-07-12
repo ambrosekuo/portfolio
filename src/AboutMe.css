@@ -39,20 +39,40 @@ margin: auto 0 auto 0;
   overflow: hidden;
   font-size: 20px;
   text-align: justify ;
-  
-  
 }
+
+.About-Me-Description > a {
+    font-weight: 700;
+    text-decoration: none;
+    width: 20%;
+    
+    font-weight: 600;
+    margin: 5px 20px 5px 0;
+    padding: 5px;
+    float: left;
+    text-align: center;
+    color: black;
+    border: 1px solid rgb(224, 224, 224);;
+}
+
+.About-Me-Description > a:hover {
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+
+  }
+
+
 
 @media (max-width: 1000px) {
     .About-Me {
         width: 100%;
-        height: 100vh;
         padding: 0;
         margin: 0 auto 0 auto;
     }
     .About-Me-Container {
         width: 95%;
-        height: 100vh;
+        height: auto;
         margin: 2%;
         display: block;
         margin-top: 30px;
