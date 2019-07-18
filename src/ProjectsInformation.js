@@ -43,7 +43,7 @@ let allProjects = [
   {
     name: "Drug Recommendation Site",
     toolsUsed: ["React.js", "Node.js", "string_score", "stream"],
-    description:
+    description: 
       "Drug Recommendation site made with a UofT Pharmacology student. They compile an excel sheet through research and academic knowledge. The excel sheet links symptoms to drugs and this web app displays it as an interactive site. Also includes a search function.",
     imageLinks: ["/assets/DrugRecommendation0.png"],
     siteLink: "http://drug-recommendation.herokuapp.com/",
