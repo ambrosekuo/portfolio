@@ -12,8 +12,6 @@ function AboutMe() {
             Hello! I'm Ambrose Kuo, a 3rd year Computer Science student at
             Ryerson University. These are some projects I'm working on!{" "}
           </p>
-          <a href="https://github.com/ambrosekuo"> Github</a>
-          <a href="https://github.com/ambrosekuo"> Linkedln</a>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-// **********************8
+// **********************
 // Purpose of this module is to just store text/links for the site
 // Could also store as a JSON file or set up a database, but currently it is much simpler to just
 //  change data here to insert it onto the site
@@ -22,15 +22,15 @@ TODO/Ideas:
 
 let allProjects = [
   {
-    name: "Chat Server",
+    name: "Type Talk",
     toolsUsed: ["React.js", "Socket.io"],
-    description: "Chat Server made with React/Sockets.IO/NodeJs",
+    description: "This Chat Web Application was created using primarily Javascript, using the React.js library and the runtime environment Node.js to create a server that can interact with clients. React.js is used in conjunction with HTML and CSS to create the visual layer that the client will see when interacting with the website. ",
     imageLinks: ["/assets/ChatServer0.png"],
-    siteLink: "",
+    siteLink: "http://typetalk.herokuapp.com/",
     githubLink: "https://github.com/ambrosekuo/MultiChatServer"
   },
   {
-    name: "Multiplayer Game",
+    name: "World Explorer",
     toolsUsed: ["Phaser3.js", "Socket.io"],
     description: "Multiplayer Platformer that was created using sockets and also has a login/logout system to save progress. Also a simpler working version made without l",
     imageLinks: [
@@ -41,7 +41,7 @@ let allProjects = [
     githubLink: "https://github.com/ambrosekuo/world-explorer-multiplayer"
   },
   {
-    name: "Drug Recommendation Site",
+    name: "OTC Recommendation Web App",
     toolsUsed: ["React.js", "Node.js", "string_score", "stream"],
     description: 
       "Drug Recommendation site made with a UofT Pharmacology student. They compile an excel sheet through research and academic knowledge. The excel sheet links symptoms to drugs and this web app displays it as an interactive site. Also includes a search function.",
