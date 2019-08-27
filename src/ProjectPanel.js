@@ -27,11 +27,6 @@ function ProjectPanel({ projectInformation }) {
         });
     };
 
-  // Not going to change anymore, so doesn't need to be rerun
-  useEffect(() => {
-    setProjectColors();
-  }, [setProjectColors]);
-
 
 
   // Takes in 3 values corresponding to rgb inputs and outputs an rgba with desired transparency (4th input) between 0 and 1
@@ -39,11 +34,6 @@ function ProjectPanel({ projectInformation }) {
     return "rgba(" + r + "," + g + "," + b + "," + transparency + ")";
   };
 
-  useEffect(() => {
-    function nameChange(newName) {
-      // setName(newName);
-    }
-  });
 
   let directionToExpandTo;
 

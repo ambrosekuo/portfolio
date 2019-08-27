@@ -37,73 +37,19 @@ function App() {
                 setVisible(!visible);
               }}
             >
-              <AnimatedHamburgerAnimation
-                visible={visible}
-                animationIn="zoomIn"
-                animationOut="zoomOut"
-              >
                 <div className="Hamburger" />
                 <div className="Hamburger" />
                 <div className="Hamburger" />
-              </AnimatedHamburgerAnimation>
               <div
                 style={{ visibility: visible ? "visible" : "hidden" }}
                 className="Mobile-Dropdown"
               >
-                <ul>
-                  <li>
-                    <Link className="link" to="/">
-                      H O M E
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="link" to="/projects">
-                      {" "}
-                      P R O J E C T S{" "}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="link" to="/resume">
-                      {" "}
-                      R E S U M E{" "}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="link" to="/todo">
-                      {" "}
-                      T O D O{" "}
-                    </Link>
-                  </li>
-                </ul>
+                <SiteLinks />
               </div>
             </div>
             <h1> Ambrose's Projects </h1>
             <div className="Button-Container">
-              <ul>
-                <li>
-                  <Link className="link" to="/">
-                    H O M E
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/projects">
-                    {" "}
-                    P R O J E C T S{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/resume">
-                    {" "}
-                    R E S U M E{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/todo">
-                    {" "}
-                    T O D O{" "}
-                  </Link>
-                </li>
-              </ul>
+              <SiteLinks />
             </div>
             <ExternalLinks />
           </div>
@@ -118,6 +64,37 @@ function App() {
     </div>
   );
 }
+
+const SiteLinks = () => {
+  return (
+    <ul>
+      <li>
+        <Link className="link" to="/">
+          H O M E
+        </Link>
+      </li>
+      <li>
+        <Link className="link" to="/projects">
+          {" "}
+          P R O J E C T S{" "}
+        </Link>
+      </li>
+      <li>
+        <Link className="link" to="/resume">
+          {" "}
+          R E S U M E{" "}
+        </Link>
+      </li>
+      <li>
+        <Link className="link" to="/todo">
+          {" "}
+          T O D O{" "}
+        </Link>
+      </li>
+    </ul>
+  );
+};
+
 
 const todo = () => {
   let descToggle = false;
@@ -156,7 +133,7 @@ const ExternalLinks = () => {
   return (
     <div className="External-Links">
       <a href="https://github.com/ambrosekuo"> Github</a>
-      <a href="https://github.com/ambrosekuo"> Linkedln</a>
+      <a href="https://www.linkedin.com/in/ambrose-kuo-832147113/"> Linkedln</a>
     </div>
   );
 };
@@ -167,8 +144,10 @@ const Home = () => {
 
 const Resume = () => {
   //return <Resume />;
+  
   return (
     <div className="Resume">
+      <div className="Resume-Link"> <button onClick={() =>window.open('/assets/ambrosekuoresume.pdf') }> View as PDF</button> </div>
       <img src="/assets/resume.png" alt="resume" />
     </div>
   ); //
@@ -176,7 +155,6 @@ const Resume = () => {
 
 const Projects = () => {
   const [pageCount, setCount] = useState(0);
-  
 
   let ProjectPanels = allProjects.map((project, i, projects) => {
     return (
@@ -191,7 +169,10 @@ const Projects = () => {
       <h1> Current Projects </h1>
       {ProjectPanels[pageCount]}
       <div className="Page-Buttons">
-        <span> Project: {pageCount+1} of {allProjects.length}</span>
+        <span>
+          {" "}
+          Project: {pageCount + 1} of {allProjects.length}
+        </span>
         <button
           onClick={() => {
             if (pageCount > 0) {
