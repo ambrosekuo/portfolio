@@ -147,8 +147,8 @@ const Resume = () => {
   
   return (
     <div className="Resume">
-      <div className="Resume-Link"> <button onClick={() =>window.open('/assets/ambrosekuoresume.pdf') }> View as PDF</button> </div>
-      <img src="/assets/resume.png" alt="resume" />
+      <div className="Resume-Link"> <button onClick={() =>window.open('./assets/ambrosekuoresume.pdf') }> View as PDF</button> </div>
+      <img src={require('./assets/Resume.png')} alt="resume" />
     </div>
   ); //
 };
