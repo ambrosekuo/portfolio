@@ -32,7 +32,7 @@ let allProjects = [
   {
     name: "World Explorer",
     toolsUsed: ["Phaser3.js", "Socket.io"],
-    description: "Multiplayer Platformer that was created using sockets and also has a login/logout system to save progress. Also a simpler working version made without l",
+    description: "Multiplayer Platformer that was created using sockets and also has a login/logout system to save progress. Goal of making a platformer that encapsulates all the features I like from games like Maplestory and Mario.",
     imageLinks: [
       "/assets/MultiplayerGame0.png",
       "/assets/MultiplayerGame1.png"

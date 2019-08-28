@@ -3,18 +3,18 @@
   position: relative;
   background: rgba(211, 211, 211, 0.404);
   width: 90%;
-  min-height: 70%;
+  height: 75%;
   padding: 20px;
 
   margin: auto;
 
   display: grid;
-  grid-template-rows: [title] 15% [tools-used] 15% [description-row] 30% [site-link] 10% [view-code] 10%;
+  grid-template-rows: [title] 15% [tools-used] 15% [description-row] 30% [site-link] 10%;
   grid-template-columns: [description-col] 40% [image] 60%;
   grid-gap: 10px 10px;
   overflow: hidden;
 
-  border: 1px solid pink;
+  border: 1px solid grey;
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
@@ -28,14 +28,25 @@
 }
 
 .Project-Image {
-  width: 100%;
-  max-width: 600px;
-  height: 100%;
-  max-height: 300px;
+  display: inline-block;
   grid-area: title/ image / site-link / span 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.helper-to-center {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.Project-Image >img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
   opacity: 0.8;
-  object-fit: contain;
-  
+  vertical-align: middle;
 }
 
 .Tools-Used {
@@ -75,8 +86,11 @@
   width: 40%;
   grid-area: site-link / image / span 1 / span 1;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.349);
+
   font-weight: bold;
+  color: rgb(77, 76, 76);
+  background: white;
+  border: 1px solid rgb(77, 76, 76);
 }
 
 .View-Code {
@@ -88,8 +102,9 @@
 .Site-Link:hover,
 .Github-Link:hover,
 .View-Code:hover {
-  background: lightcoral;
-  font-weight: bold;
+  border: 1px solid white; 
+  color: white;
+  background: rgb(77, 76, 76);
 }
 
 @media (max-width: 600px) {

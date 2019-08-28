@@ -12,28 +12,25 @@ function ProjectPanel({ projectInformation }) {
     backgroundColor: "#white"
   });
 
-    // Using Vibrant.js to extract image color and setting the colors of the project component
-    const setProjectColors = () => {
-      Vibrant.from(projectInformation.imageLinks[0])
-        .getPalette()
-        .then(palette => {
-          // Use destruction operator ... because we want to get a copy, not overwrite the original
-          setColor({
-            ...componentColors,
-            titleColor: RGBarrToRGBA(...palette.DarkVibrant.getRgb(), 1),
-            panelColors: RGBarrToRGBA(...palette.LightMuted.getRgb(), 0.4),
-            backgroundColor: RGBarrToRGBA(...palette.LightVibrant.getRgb(), 0.4)
-          });
+  // Using Vibrant.js to extract image color and setting the colors of the project component
+  const setProjectColors = () => {
+    Vibrant.from(projectInformation.imageLinks[0])
+      .getPalette()
+      .then(palette => {
+        // Use destruction operator ... because we want to get a copy, not overwrite the original
+        setColor({
+          ...componentColors,
+          titleColor: RGBarrToRGBA(...palette.DarkVibrant.getRgb(), 1),
+          panelColors: RGBarrToRGBA(...palette.LightMuted.getRgb(), 0.4),
+          backgroundColor: RGBarrToRGBA(...palette.LightVibrant.getRgb(), 0.4)
         });
-    };
-
-
+      });
+  };
 
   // Takes in 3 values corresponding to rgb inputs and outputs an rgba with desired transparency (4th input) between 0 and 1
   const RGBarrToRGBA = (r, g, b, transparency) => {
     return "rgba(" + r + "," + g + "," + b + "," + transparency + ")";
   };
-
 
   let directionToExpandTo;
 
@@ -68,11 +65,13 @@ function ProjectPanel({ projectInformation }) {
       >
         {projectInformation.name}
       </h3>
-      <img
-      className="Project-Image"
-        src={projectInformation.imageLinks[0]}
-        alt={projectInformation.name}
-      />
+      <div className="Project-Image">
+        <div className="helper-to-center"> </div>
+        <img
+          src={projectInformation.imageLinks[0]}
+          alt={projectInformation.name}
+        />
+      </div>
       <div
         className="Tools-Used"
         style={{ backgroundColor: componentColors.panelColors }}

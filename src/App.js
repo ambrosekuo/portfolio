@@ -10,12 +10,6 @@ import { Animated } from "react-animated-css";
 
 // import {useRoutes} from 'hookrouter';
 
-/*
-const routes = {
-  '/': () => <HomePage />,
-}
-*/
-
 function App() {
   //const Hamburger = posed.div({left: {x:-100}, right: {x:100}});
   const Hamburger = posed.div({
@@ -67,31 +61,23 @@ function App() {
 
 const SiteLinks = () => {
   return (
-    <ul>
-      <li>
+    <div className="Site-Links">
         <Link className="link" to="/">
           H O M E
         </Link>
-      </li>
-      <li>
         <Link className="link" to="/projects">
           {" "}
           P R O J E C T S{" "}
         </Link>
-      </li>
-      <li>
         <Link className="link" to="/resume">
           {" "}
           R E S U M E{" "}
         </Link>
-      </li>
-      <li>
         <Link className="link" to="/todo">
           {" "}
           T O D O{" "}
         </Link>
-      </li>
-    </ul>
+        </div>
   );
 };
 
@@ -148,11 +134,13 @@ const Resume = () => {
     <div className="Resume">
       <div className="Resume-Link">
         {" "}
-        <button onClick={() => {
-          console.log(window.location);
-          window.open(process.env.PUBLIC_URL+"/assets/ambrosekuoresume.pdf");
-        }
-      }>
+        <button
+          onClick={() => {
+            // Building URL
+            const resumePDF = require("./assets/AmbroseKuoResume.pdf");
+            window.open(resumePDF);
+          }}
+        >
           {" "}
           View as PDF
         </button>{" "}
@@ -183,6 +171,7 @@ const Projects = () => {
           Project: {pageCount + 1} of {allProjects.length}
         </span>
         <button
+          className="Page-Button"
           onClick={() => {
             if (pageCount > 0) {
               setCount(pageCount - 1);
@@ -193,6 +182,7 @@ const Projects = () => {
           &lt;={" "}
         </button>
         <button
+          className="Page-Button"
           onClick={() => {
             if (pageCount < allProjects.length - 1) {
               setCount(pageCount + 1);
@@ -206,11 +196,5 @@ const Projects = () => {
     </div>
   );
 };
-
-/* TO ADD LATER PROJECT NOTEPAD
-
-        
-
-        */
 
 export default App;
