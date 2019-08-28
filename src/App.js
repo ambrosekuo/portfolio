@@ -37,9 +37,9 @@ function App() {
                 setVisible(!visible);
               }}
             >
-                <div className="Hamburger" />
-                <div className="Hamburger" />
-                <div className="Hamburger" />
+              <div className="Hamburger" />
+              <div className="Hamburger" />
+              <div className="Hamburger" />
               <div
                 style={{ visibility: visible ? "visible" : "hidden" }}
                 className="Mobile-Dropdown"
@@ -95,7 +95,6 @@ const SiteLinks = () => {
   );
 };
 
-
 const todo = () => {
   let descToggle = false;
   const toggleExpand = newBool => {
@@ -144,11 +143,21 @@ const Home = () => {
 
 const Resume = () => {
   //return <Resume />;
-  
+
   return (
     <div className="Resume">
-      <div className="Resume-Link"> <button onClick={() =>window.open('./assets/ambrosekuoresume.pdf') }> View as PDF</button> </div>
-      <img src={require('./assets/Resume.png')} alt="resume" />
+      <div className="Resume-Link">
+        {" "}
+        <button onClick={() => {
+          console.log(window.location);
+          window.open(process.env.PUBLIC_URL+"/assets/ambrosekuoresume.pdf");
+        }
+      }>
+          {" "}
+          View as PDF
+        </button>{" "}
+      </div>
+      <img src={require("./assets/Resume.png")} alt="resume" />
     </div>
   ); //
 };
