@@ -24,7 +24,8 @@ let allProjects = [
   {
     name: "Type Talk",
     toolsUsed: ["React.js", "Socket.io"],
-    description: "This Chat Web Application was created using primarily Javascript, using the React.js library and the runtime environment Node.js to create a server that can interact with clients. React.js is used in conjunction with HTML and CSS to create the visual layer that the client will see when interacting with the website. ",
+    description:
+      "This Chat Web Application was created using primarily Javascript, using the React.js library and the runtime environment Node.js to create a server that can interact with clients. React.js is used in conjunction with HTML and CSS to create the visual layer that the client will see when interacting with the website. ",
     imageLinks: ["/assets/ChatServer0.png"],
     siteLink: "http://typetalk.herokuapp.com/",
     githubLink: "https://github.com/ambrosekuo/MultiChatServer"
@@ -32,7 +33,8 @@ let allProjects = [
   {
     name: "World Explorer",
     toolsUsed: ["Phaser3.js", "Socket.io"],
-    description: "Multiplayer Platformer that was created using sockets and also has a login/logout system to save progress. Goal of making a platformer that encapsulates all the features I like from games like Maplestory and Mario.",
+    description:
+      "Multiplayer Platformer that was created using sockets and also has a login/logout system to save progress. Goal of making a platformer that encapsulates all the features I like from games like Maplestory and Mario.",
     imageLinks: [
       "/assets/MultiplayerGame0.png",
       "/assets/MultiplayerGame1.png"
@@ -43,7 +45,7 @@ let allProjects = [
   {
     name: "OTC Recommendation Web App",
     toolsUsed: ["React.js", "Node.js", "string_score", "stream"],
-    description: 
+    description:
       "Drug Recommendation site made with a UofT Pharmacology student. They compile an excel sheet through research and academic knowledge. The excel sheet links symptoms to drugs and this web app displays it as an interactive site. Also includes a search function.",
     imageLinks: ["/assets/DrugRecommendation0.png"],
     siteLink: "http://drug-recommendation.herokuapp.com/",
@@ -51,22 +53,55 @@ let allProjects = [
   }
 ];
 
-let currentIdeas = [
+// Priority rating: big issue (red) , medium issue (yellow), suggestion (green)
+let projectsTodo = [
   {
-    title: "Issue: Multiplayer Game desyncing",
-    difficulty: "Hell",
-    description:
-      "Currently, you can only see the people that joined after you, so it's multiplayer, but not syncing correctly. The code is messy/not modularize and very long since it was a difficult project."
+    projectName: "World Explorer 2D",
+    todo: [
+      {
+        description:
+          "Core syncing issue where only those that joined earlier can see new players. Sockets not being broadcasted properly?",
+        priority: "red"
+      },
+      {
+        description:
+          "Fix ability to switch rooms (have servers, change to a new map)",
+        priority: "orange"
+      },
+      {
+        description: "Implement a chatbox, use concepts from TypeTalk",
+        priority: "green"
+      },
+      {
+        description:
+          "Create an inventory to hold items and finish the structure for equipping/de-equipping items",
+        priority: "green"
+      }
+    ]
   },
   {
-    title: "Todo: Make this Portfolio look better",
-    difficulty: "???",
-    description: "Figuring out how to make this site look professional"
-  },{
-    title: "Expanding on: Chat Server",
-    difficulty: "Medium",
-    description: "Creating database end and being able to create chat rooms."
+    projectName: "TypeTalk",
+    todo: [
+      {
+        description:
+          "add ability to make own chat room and message people privately",
+        priority: "green"
+      },
+      {
+        description: "Improve UI of the chatroom, so it is more intuitive",
+        priority: "green"
+      }
+    ]
   },
+  {
+    projectName: "OTC Recommendation",
+    todo: [
+      {
+        description: "Create a database to save the excel spreadsheet into.",
+        priority: "green"
+      }
+    ]
+  }
 ];
 
-export { allProjects, currentIdeas };
+export { allProjects, projectsTodo };

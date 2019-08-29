@@ -1,43 +1,64 @@
 import React, { useState, useEffect } from "react";
 import "./ProjectDescription.css";
 
-function TodoFixes({ currentIdea, keyID }) {
+const ProjectTasks = ({ projectTodo, projectNumber, projectName }) => {
+  const listOfProjectTodo = projectTodo.map((task, i, tasks) => {
+    return (
+      <li key={projectName + i}>
+        <div style={{ color: task.priority }}> {task.description}</div>
+      </li>
+    );
+  });
+
   return (
-    <li key={keyID}>
-      <h3> {currentIdea.title} </h3>
-      <h3> Difficulty Rating: {currentIdea.difficulty} </h3>
-      <div> {currentIdea.description} </div>
-      <hr style={{ margin: "0", width: "95%" }} />
+    <li key={"project" + projectNumber}>
+      <ul>{listOfProjectTodo}</ul>
     </li>
   );
-}
+};
 
-function ProjectDescription({ toggleExpand, currentIdeas }) {
+const ProjectDescription = ({ toggleExpand, allProjects }) => {
   const [isDescriptionExpanded, setDescriptionExpand] = useState(false);
 
-  let description;
+  let tasks;
   if (isDescriptionExpanded) {
-    description = currentIdeas.map((currentIdea, i, currentIdeas) => (
-      <TodoFixes currentIdea={currentIdea} key={"currentIdea" + i}>
-        {" "}
-      </TodoFixes>
+    tasks = allProjects.map((project, i, allProjects) => (
+      <ul>
+        <h2> {project.projectName}</h2>
+        <ProjectTasks
+          projectTodo={project.todo}
+          projectNumber={i}
+          projectName={project.projectName}
+        ></ProjectTasks>
+      </ul>
     ));
   } else {
-    description =
-      currentIdeas.length >= 1 ? (
-        <TodoFixes currentIdea={currentIdeas[0]} key={"currentIdea" + 0}>
-          {" "}
-        </TodoFixes>
+    tasks =
+      allProjects.length >= 1 ? (
+        <ul>
+          <h2> {allProjects[0].projectName}</h2>
+          <ProjectTasks
+            projectTodo={allProjects[0].todo}
+            projectNumber={0}
+          ></ProjectTasks>
+        </ul>
       ) : (
         ""
       );
   }
+
   return (
     <div className="Project-Description">
       <div className="Project-Description-Header">
-        <h2> Current Issues/Ideas </h2>
+        <h2> Current Ideas and Issues </h2>
       </div>
-      <ul>{description}</ul>
+      <h3>
+        {" "}
+        <span style={{ color: "red" }}> Priority Issue </span> ,
+        <span style={{ color: "orange" }}> Medium level issue </span> ,
+        <span style={{ color: "green" }}> Additional Implementations </span>{" "}
+      </h3>
+      {tasks}
       <button
         className="Toggle-Current-Ideas"
         onClick={() => {
@@ -47,9 +68,8 @@ function ProjectDescription({ toggleExpand, currentIdeas }) {
       >
         {isDescriptionExpanded ? "Show less ⬆" : "Show more ⬇"}
       </button>
-      
     </div>
   );
-}
+};
 
 export default ProjectDescription;

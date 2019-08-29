@@ -32,8 +32,6 @@ function ProjectPanel({ projectInformation }) {
     return "rgba(" + r + "," + g + "," + b + "," + transparency + ")";
   };
 
-  let directionToExpandTo;
-
   let toolsUsed = projectInformation.toolsUsed.map((tool, i, tools) => {
     return (
       <span key={"toolUsed" + i}>
@@ -43,7 +41,7 @@ function ProjectPanel({ projectInformation }) {
     );
   });
   let websiteLink =
-    projectInformation.siteLink != "" ? (
+    projectInformation.siteLink !== "" ? (
       <a className="Site-Link" href={projectInformation.siteLink}>
         {" "}
         To Site{" "}

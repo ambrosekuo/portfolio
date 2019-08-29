@@ -12,6 +12,9 @@ function AboutMe() {
             Hello! I'm Ambrose Kuo, a 3rd year Computer Science student at
             Ryerson University. These are some projects I'm working on!{" "}
           </p>
+          <p> 
+            This site was build entirely from scratch with vanilla CSS and React.js!
+          </p>
         </div>
       </div>
     </div>

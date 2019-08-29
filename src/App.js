@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import ProjectPanel from "./ProjectPanel.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { allProjects, currentIdeas } from "./ProjectsInformation.js";
+import { allProjects, projectsTodo } from "./ProjectsInformation.js";
 import ProjectDescription from "./ProjectDescription.js";
 import AboutMe from "./AboutMe.js";
 import posed from "react-pose";
@@ -87,7 +87,7 @@ const todo = () => {
     descToggle = newBool;
   };
   return (
-    <ProjectDescription currentIdeas={currentIdeas} toggleExpand={toggleExpand}>
+    <ProjectDescription allProjects={projectsTodo} toggleExpand={toggleExpand}>
       {" "}
     </ProjectDescription>
   );

@@ -1,6 +1,6 @@
 .Project-Description {
   width: 90%;
-  height: 100%;
+  
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -16,14 +16,28 @@
   border-bottom: 1px solid black;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
+.Project-Description-Header > h2{
+  font-size: 30px;
+  margin: 0;
+  text-shadow: 2px 3px white;
+}
 
 .Project-Description > ul {
   text-align: left;
+  color: rgb(37, 37, 37);
 }
 
 .Project-Description > ul > li {
   margin-bottom: 5px;
   text-decoration: none;
+  list-style: none;
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 5px;
+  border-top: 1px dotted black;
+}
+.Project-Description > ul > li > ul {
+  list-style: disc;
 }
 
 @media (max-width: 768px) {

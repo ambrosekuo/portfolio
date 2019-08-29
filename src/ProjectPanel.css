@@ -58,11 +58,13 @@
   font-size: 15px;
   grid-area: tools-used / description-col / description-row / span 1;
 }
+
 .Tools-Used >span {
   font-weight: bold;
 }
 
 .ProjectPanel-Description {
+  grid-area: description-row / description-col / -1 / span 1;
   width: 95%;
   height: 90%;
   padding: 5px;
@@ -74,7 +76,7 @@
   hyphens: auto;
   font-weight: 600;
 
-  grid-area: description-row / description-col / -1 / span 1;
+  
 }
 
 .Site-Link,
@@ -112,5 +114,6 @@
     width: 80%;
     margin: 5%;
     display: block;
+    min-height: 80vh;
   }
 }
